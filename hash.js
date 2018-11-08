@@ -21,18 +21,17 @@ function HashMap(){
 function put(hashmap, key, value){
 	let hashCode = hash(key);
 	// console.log(hashCode);
+	let newNode = new Node(key, value);
 	for(var i=0;i<hashmap.nodes.length;i++){
 		if(hashmap.nodes[i].hash == hashCode){
 			let t = hashmap.nodes[i];
 			while(t.next != undefined){
 				t = t.next;
 			}
-			t.next = new Node(key, value);
+			t.next = newNode;
 			return hashmap;
 		}
 	}
-
-	let newNode = new Node(key, value);
 	hashmap.nodes.push(newNode);
 	return hashmap;
 }

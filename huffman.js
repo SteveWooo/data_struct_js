@@ -5,7 +5,7 @@ function Node(data){
 	this.char = data.char;
 	this.count = data.count;
 }
-
+//
 function sign(r, code){
 	if(!r){
 		return ;
